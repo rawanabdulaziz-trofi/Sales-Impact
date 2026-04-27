@@ -31,7 +31,7 @@
       radial-gradient(circle at 80% 80%, rgba(244, 196, 48, 0.04) 0%, transparent 50%);
   }
 
-  .container { max-width: 1100px; margin: 0 auto; }
+  .container { max-width: 1900px; margin: 0 auto; }
 
   .header {
     text-align: center;
@@ -132,9 +132,9 @@
   }
 
   .weekday {
-    padding: 14px 8px;
+    padding: 18px 8px;
     text-align: center;
-    font-size: 11px;
+    font-size: 13px;
     font-weight: 600;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -143,11 +143,11 @@
   .days { display: grid; grid-template-columns: repeat(7, 1fr); }
 
   .day {
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 1.3 / 1;
     border-right: 1px solid var(--line);
     border-bottom: 1px solid var(--line);
     position: relative;
-    min-height: 90px;
+    min-height: 130px;
     overflow: hidden;
   }
 
@@ -158,7 +158,7 @@
   .day-content {
     position: relative;
     z-index: 1;
-    padding: 10px;
+    padding: 14px;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -177,13 +177,13 @@
 
   .day-number {
     font-family: 'Instrument Serif', serif;
-    font-size: 22px;
+    font-size: 28px;
     font-weight: 400;
     line-height: 1;
   }
 
   .day-label {
-    font-size: 11px;
+    font-size: 13px;
     line-height: 1.25;
     font-weight: 600;
     letter-spacing: 0.3px;
@@ -223,15 +223,15 @@
   .legend-item {
     display: flex;
     align-items: center;
-    gap: 10px;
-    font-size: 13px;
+    gap: 12px;
+    font-size: 15px;
     font-weight: 500;
     letter-spacing: 0.5px;
   }
 
   .legend-swatch {
-    width: 18px;
-    height: 18px;
+    width: 22px;
+    height: 22px;
     border-radius: 3px;
     border: 1px solid rgba(0,0,0,0.1);
   }
@@ -305,9 +305,6 @@
 </div>
 
 <script>
-  // ====== EVENTS DATA ======
-  // type: 'eid' | 'break' | 'exam' | 'intl' | 'payday'
-  // For two events: [{type, label}, {type, label}]
   const events = {
     // ===== JANUARY 2025 =====
     '2025-01-03': { type: 'break', label: 'Mid-Year Break' },
@@ -526,9 +523,7 @@
     '2026-09-23': { type: 'break', label: 'National Day' },
     '2026-09-27': { type: 'payday', label: 'Payday' },
   };
-  // ====================================================
 
-  // Auto-fill summer break gaps
   function fillRange(startDate, endDate, type, label) {
     for (let d = new Date(startDate); d <= endDate; d.setDate(d.getDate() + 1)) {
       const key = `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
