@@ -305,6 +305,9 @@
 </div>
 
 <script>
+  // ====== EVENTS DATA ======
+  // type: 'eid' | 'break' | 'exam' | 'intl' | 'payday'
+  // For two events: [{type, label}, {type, label}]
   const events = {
     // ===== JANUARY 2025 =====
     '2025-01-03': { type: 'break', label: 'Mid-Year Break' },
@@ -485,12 +488,13 @@
 
     // ===== MAY 2026 =====
     '2026-05-01': { type: 'intl', label: "Workers' Day" },
+    '2026-05-15': { type: 'intl', label: 'Graduation Season' },
     '2026-05-22': { type: 'break', label: 'Eid Al-Adha Break' },
     '2026-05-23': { type: 'break', label: 'Eid Al-Adha Break' },
     '2026-05-24': { type: 'break', label: 'Eid Al-Adha Break' },
     '2026-05-25': { type: 'break', label: 'Eid Al-Adha Break' },
     '2026-05-26': { type: 'break', label: 'Eid Al-Adha Break' },
-    '2026-05-27': { type: 'break', label: 'Eid Al-Adha Break' },
+    '2026-05-27': [{ type: 'break', label: 'Eid Al-Adha Break' }, { type: 'eid', label: 'Eid Al-Adha' }],
     '2026-05-28': { type: 'break', label: 'Eid Al-Adha Break' },
     '2026-05-29': { type: 'break', label: 'Eid Al-Adha Break' },
     '2026-05-30': { type: 'break', label: 'Eid Al-Adha Break' },
@@ -506,7 +510,7 @@
     '2026-06-12': { type: 'exam', label: 'Final Exams' },
     '2026-06-13': { type: 'exam', label: 'Final Exams' },
     '2026-06-14': { type: 'exam', label: 'Final Exams' },
-    '2026-06-15': { type: 'exam', label: 'Final Exams' },
+    '2026-06-15': [{ type: 'exam', label: 'Final Exams' }, { type: 'intl', label: "Father's Day" }],
     '2026-06-16': { type: 'exam', label: 'Final Exams' },
     '2026-06-17': { type: 'exam', label: 'Final Exams' },
     '2026-06-18': { type: 'exam', label: 'Final Exams' },
@@ -514,7 +518,9 @@
     '2026-06-28': [{ type: 'break', label: 'Summer Break' }, { type: 'payday', label: 'Payday' }],
 
     // ===== JULY 2026 =====
+    '2026-07-07': { type: 'intl', label: 'Chocolate Day' },
     '2026-07-27': { type: 'payday', label: 'Payday' },
+    '2026-07-30': { type: 'intl', label: 'Friendship Day' },
 
     // ===== AUGUST 2026 =====
     '2026-08-23': { type: 'exam', label: 'Back to School' },
@@ -525,19 +531,23 @@
     '2026-09-27': { type: 'payday', label: 'Payday' },
 
     // ===== OCTOBER 2026 =====
-    '2026-10-01': { type: 'intl', label: 'Coffee Day' },
+    '2026-10-01': [{ type: 'intl', label: 'Coffee Day' }, { type: 'intl', label: 'Breast Cancer Awareness' }],
     '2026-10-27': { type: 'payday', label: 'Payday' },
 
     // ===== NOVEMBER 2026 =====
+    '2026-11-01': { type: 'intl', label: 'Winter Begins' },
     '2026-11-11': { type: 'intl', label: 'Singles Day' },
     '2026-11-19': { type: 'intl', label: "Men's Day" },
     '2026-11-26': { type: 'payday', label: 'Payday' },
     '2026-11-27': { type: 'intl', label: 'Black Friday' },
 
     // ===== DECEMBER 2026 =====
+    '2026-12-18': { type: 'intl', label: 'Arabic Language Day' },
     '2026-12-27': { type: 'payday', label: 'Payday' },
   };
+  // ====================================================
 
+  // Auto-fill summer break gaps
   function fillRange(startDate, endDate, type, label) {
     for (let d = new Date(startDate); d <= endDate; d.setDate(d.getDate() + 1)) {
       const key = `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
