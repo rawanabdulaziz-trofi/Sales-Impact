@@ -18,9 +18,9 @@
     --payday: #2d5f3f;
     --weekend: #d4cfc4;
   }
- 
+
   * { box-sizing: border-box; margin: 0; padding: 0; }
- 
+
   body {
     background: var(--bg);
     font-family: 'Space Grotesk', sans-serif;
@@ -30,9 +30,9 @@
       radial-gradient(circle at 20% 10%, rgba(217, 78, 63, 0.04) 0%, transparent 50%),
       radial-gradient(circle at 80% 80%, rgba(244, 196, 48, 0.04) 0%, transparent 50%);
   }
- 
+
   .container { max-width: 1900px; margin: 0 auto; }
- 
+
   .header {
     text-align: center;
     margin-bottom: 20px;
@@ -40,7 +40,7 @@
     border-bottom: 2px solid var(--ink);
     position: relative;
   }
- 
+
   .header::after {
     content: "";
     position: absolute;
@@ -52,7 +52,7 @@
     background: var(--bg);
     border-bottom: 2px solid var(--ink);
   }
- 
+
   .header h1 {
     font-family: 'Instrument Serif', serif;
     font-size: clamp(32px, 5vw, 52px);
@@ -61,7 +61,7 @@
     margin-bottom: 8px;
     font-style: italic;
   }
- 
+
   .header .subtitle {
     color: var(--muted);
     font-size: 13px;
@@ -69,7 +69,7 @@
     text-transform: uppercase;
     font-weight: 500;
   }
- 
+
   .navigation {
     display: flex;
     align-items: center;
@@ -78,7 +78,7 @@
     gap: 20px;
     flex-wrap: wrap;
   }
- 
+
   .nav-btn {
     background: var(--ink);
     color: var(--bg);
@@ -95,19 +95,19 @@
     border-radius: 2px;
     letter-spacing: 0.5px;
   }
- 
+
   .nav-btn:hover { background: var(--exam); transform: translateY(-1px); }
   .nav-btn:disabled { opacity: 0.3; cursor: not-allowed; }
- 
+
   .month-display { flex: 1; text-align: center; min-width: 200px; }
- 
+
   .month-display .month-name {
     font-family: 'Instrument Serif', serif;
     font-size: clamp(28px, 3.5vw, 40px);
     font-weight: 400;
     font-style: italic;
   }
- 
+
   .month-display .year {
     color: var(--muted);
     font-size: 13px;
@@ -115,7 +115,7 @@
     margin-top: 4px;
     font-weight: 500;
   }
- 
+
   .calendar {
     background: #fff;
     border: 2px solid var(--ink);
@@ -123,14 +123,14 @@
     overflow: hidden;
     box-shadow: 8px 8px 0 var(--ink);
   }
- 
+
   .weekdays {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     background: var(--ink);
     color: var(--bg);
   }
- 
+
   .weekday {
     padding: 18px 8px;
     text-align: center;
@@ -139,9 +139,9 @@
     letter-spacing: 2px;
     text-transform: uppercase;
   }
- 
+
   .days { display: grid; grid-template-columns: repeat(7, 1fr); }
- 
+
   .day {
     aspect-ratio: 1.6 / 1;
     border-right: 1px solid var(--line);
@@ -150,11 +150,11 @@
     min-height: 110px;
     overflow: hidden;
   }
- 
+
   .day:nth-child(7n) { border-right: none; }
- 
+
   .day-bg { position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; }
- 
+
   .day-content {
     position: relative;
     z-index: 1;
@@ -164,7 +164,7 @@
     flex-direction: column;
     justify-content: space-between;
   }
- 
+
   .day.empty {
     background: repeating-linear-gradient(
       45deg,
@@ -174,14 +174,14 @@
       rgba(0,0,0,0.02) 16px
     );
   }
- 
+
   .day-number {
     font-family: 'Instrument Serif', serif;
     font-size: 28px;
     font-weight: 400;
     line-height: 1;
   }
- 
+
   .day-label {
     font-size: 16px;
     line-height: 1.25;
@@ -189,25 +189,25 @@
     letter-spacing: 0.3px;
     text-transform: uppercase;
   }
- 
+
   .day.weekend .day-bg { background: var(--weekend); }
   .day.weekend .day-number { opacity: 0.5; }
- 
+
   .bg-eid { background: var(--eid); }
   .bg-break { background: var(--break); }
   .bg-exam { background: var(--exam); }
   .bg-intl { background: var(--intl); }
   .bg-payday { background: var(--payday); }
- 
+
   .day.text-light .day-number,
   .day.text-light .day-label { color: #fff; }
- 
+
   .day.today .day-number {
     text-decoration: underline;
     text-decoration-thickness: 2px;
     text-underline-offset: 4px;
   }
- 
+
   .legend {
     margin-top: 16px;
     padding: 14px 24px;
@@ -219,7 +219,7 @@
     gap: 24px;
     justify-content: center;
   }
- 
+
   .legend-item {
     display: flex;
     align-items: center;
@@ -228,14 +228,14 @@
     font-weight: 500;
     letter-spacing: 0.5px;
   }
- 
+
   .legend-swatch {
     width: 22px;
     height: 22px;
     border-radius: 3px;
     border: 1px solid rgba(0,0,0,0.1);
   }
- 
+
   @media (max-width: 600px) {
     body { padding: 20px 10px; }
     .day { min-height: 65px; }
@@ -253,7 +253,7 @@
     <h1>Sales Impact Calendar</h1>
     <div class="subtitle">2025 — 2027</div>
   </div>
- 
+
   <div class="navigation">
     <button class="nav-btn" id="prevBtn">
       <span>‹</span><span>Previous</span>
@@ -266,7 +266,7 @@
       <span>Next</span><span>›</span>
     </button>
   </div>
- 
+
   <div class="calendar">
     <div class="weekdays">
       <div class="weekday">Sun</div>
@@ -279,7 +279,7 @@
     </div>
     <div class="days" id="daysGrid"></div>
   </div>
- 
+
   <div class="legend">
     <div class="legend-item">
       <div class="legend-swatch" style="background: var(--eid);"></div>
@@ -303,7 +303,7 @@
     </div>
   </div>
 </div>
- 
+
 <script>
   // ====== EVENTS DATA ======
   // type: 'eid' | 'break' | 'exam' | 'intl' | 'payday'
@@ -320,7 +320,7 @@
     '2025-01-10': { type: 'break', label: 'Mid-Year Break' },
     '2025-01-11': { type: 'break', label: 'Mid-Year Break' },
     '2025-01-12': { type: 'exam', label: 'Back to School' },
- 
+
     // ===== FEBRUARY 2025 =====
     '2025-02-21': { type: 'break', label: 'Winter Break' },
     '2025-02-22': [{ type: 'break', label: 'Winter Break' }, { type: 'eid', label: 'Founding Day' }],
@@ -330,7 +330,7 @@
     '2025-02-26': { type: 'break', label: 'Winter Break' },
     '2025-02-27': { type: 'break', label: 'Winter Break' },
     '2025-02-28': { type: 'break', label: 'Winter Break' },
- 
+
     // ===== MARCH 2025 =====
     '2025-03-01': [{ type: 'break', label: 'Winter Break' }, { type: 'exam', label: 'Ramadan Begins' }],
     '2025-03-02': { type: 'exam', label: 'Back to School' },
@@ -340,7 +340,7 @@
     '2025-03-29': { type: 'break', label: 'Eid Break' },
     '2025-03-30': [{ type: 'break', label: 'Eid Break' }, { type: 'eid', label: 'Eid Al-Fitr' }],
     '2025-03-31': { type: 'break', label: 'Eid Break' },
- 
+
     // ===== APRIL 2025 =====
     '2025-04-01': { type: 'break', label: 'Eid Break' },
     '2025-04-02': { type: 'break', label: 'Eid Break' },
@@ -348,13 +348,13 @@
     '2025-04-04': { type: 'break', label: 'Eid Break' },
     '2025-04-05': { type: 'break', label: 'Eid Break' },
     '2025-04-06': { type: 'exam', label: 'Back to School' },
- 
+
     // ===== MAY 2025 =====
     '2025-05-04': { type: 'break', label: 'Long Weekend' },
     '2025-05-05': { type: 'break', label: 'Long Weekend' },
     '2025-05-30': { type: 'break', label: 'Eid Al-Adha Break' },
     '2025-05-31': { type: 'break', label: 'Eid Al-Adha Break' },
- 
+
     // ===== JUNE 2025 =====
     '2025-06-01': { type: 'break', label: 'Eid Al-Adha Break' },
     '2025-06-02': { type: 'break', label: 'Eid Al-Adha Break' },
@@ -380,19 +380,19 @@
     '2025-06-28': { type: 'break', label: 'Summer Break' },
     '2025-06-29': { type: 'break', label: 'Summer Break' },
     '2025-06-30': { type: 'break', label: 'Summer Break' },
- 
+
     // ===== AUGUST 2025 =====
     '2025-08-24': { type: 'exam', label: 'Back to School' },
- 
+
     // ===== SEPTEMBER 2025 =====
     '2025-09-23': { type: 'break', label: 'National Day' },
- 
+
     // ===== OCTOBER 2025 =====
     '2025-10-01': { type: 'intl', label: 'Coffee Day' },
     '2025-10-09': { type: 'break', label: 'Long Weekend' },
     '2025-10-10': { type: 'break', label: 'Long Weekend' },
     '2025-10-11': { type: 'break', label: 'Long Weekend' },
- 
+
     // ===== NOVEMBER 2025 =====
     '2025-11-11': { type: 'intl', label: 'Singles Day' },
     '2025-11-19': { type: 'intl', label: "Men's Day" },
@@ -406,7 +406,7 @@
     '2025-11-28': [{ type: 'break', label: 'Autumn Break' }, { type: 'intl', label: 'Black Friday' }],
     '2025-11-29': { type: 'break', label: 'Autumn Break' },
     '2025-11-30': { type: 'exam', label: 'Back to School' },
- 
+
     // ===== DECEMBER 2025 =====
     '2025-12-11': { type: 'break', label: 'Long Weekend' },
     '2025-12-12': { type: 'break', label: 'Long Weekend' },
@@ -416,7 +416,7 @@
     '2025-12-29': { type: 'exam', label: 'Final Exams' },
     '2025-12-30': { type: 'exam', label: 'Final Exams' },
     '2025-12-31': { type: 'exam', label: 'Final Exams' },
- 
+
     // ===== JANUARY 2026 =====
     '2026-01-01': { type: 'exam', label: 'Final Exams' },
     '2026-01-02': { type: 'exam', label: 'Final Exams' },
@@ -440,12 +440,12 @@
     '2026-01-29': { type: 'intl', label: 'Riyadh Marathon' },
     '2026-01-30': { type: 'intl', label: 'Riyadh Marathon' },
     '2026-01-31': { type: 'intl', label: 'Riyadh Marathon' },
- 
+
     // ===== FEBRUARY 2026 =====
     '2026-02-14': { type: 'intl', label: "Valentine's Day" },
     '2026-02-18': { type: 'exam', label: 'Ramadan Begins' },
     '2026-02-22': { type: 'break', label: 'Founding Day' },
- 
+
     // ===== MARCH 2026 =====
     '2026-03-08': [{ type: 'break', label: 'Eid Break' }, { type: 'intl', label: "Women's Day" }],
     '2026-03-09': { type: 'break', label: 'Eid Break' },
@@ -469,10 +469,10 @@
     '2026-03-27': { type: 'break', label: 'Eid Break' },
     '2026-03-28': { type: 'break', label: 'Eid Break' },
     '2026-03-29': { type: 'exam', label: 'Back to School' },
- 
+
     // ===== APRIL 2026 =====
     '2026-04-22': { type: 'intl', label: 'Earth Day' },
- 
+
     // ===== MAY 2026 =====
     '2026-05-01': { type: 'intl', label: "Workers' Day" },
     '2026-05-15': { type: 'intl', label: 'Graduation Season' },
@@ -486,7 +486,7 @@
     '2026-05-29': { type: 'break', label: 'Eid Al-Adha Break' },
     '2026-05-30': { type: 'break', label: 'Eid Al-Adha Break' },
     '2026-05-31': { type: 'break', label: 'Eid Al-Adha Break' },
- 
+
     // ===== JUNE 2026 =====
     '2026-06-14': { type: 'exam', label: 'Final Exams' },
     '2026-06-15': [{ type: 'exam', label: 'Final Exams' }, { type: 'intl', label: "Father's Day" }],
@@ -501,20 +501,21 @@
     '2026-06-24': { type: 'exam', label: 'Final Exams' },
     '2026-06-25': { type: 'break', label: 'Summer Break' },
     '2026-06-27': { type: 'intl', label: 'KSA x CPV' },
- 
+
     // ===== JULY 2026 =====
     '2026-07-07': { type: 'intl', label: 'Chocolate Day' },
     '2026-07-30': { type: 'intl', label: 'Friendship Day' },
- 
+
     // ===== AUGUST 2026 =====
     '2026-08-23': { type: 'exam', label: 'Back to School' },
- 
+
     // ===== SEPTEMBER 2026 =====
     '2026-09-23': { type: 'break', label: 'National Day' },
- 
+
     // ===== OCTOBER 2026 =====
     '2026-10-01': [{ type: 'intl', label: 'Coffee Day' }, { type: 'intl', label: 'Breast Cancer Awareness' }],
- 
+    '2026-10-25': { type: 'break', label: 'Long Weekend' },
+
     // ===== NOVEMBER 2026 =====
     '2026-11-01': { type: 'intl', label: 'Winter Begins' },
     '2026-11-11': { type: 'intl', label: 'Singles Day' },
@@ -528,12 +529,14 @@
     '2026-11-26': { type: 'break', label: 'Autumn Break' },
     '2026-11-27': [{ type: 'break', label: 'Autumn Break' }, { type: 'intl', label: 'Black Friday' }],
     '2026-11-28': { type: 'break', label: 'Autumn Break' },
-    '2026-11-29': { type: 'exam', label: 'Back to School' },
- 
+    '2026-11-29': { type: 'break', label: 'Long Weekend' },
+    '2026-11-30': { type: 'exam', label: 'Back to School' },
+
     // ===== DECEMBER 2026 =====
     '2026-12-18': { type: 'intl', label: 'Arabic Language Day' },
- 
+
     // ===== JANUARY 2027 =====
+    '2027-01-07': { type: 'break', label: 'Long Weekend' },
     '2027-01-08': { type: 'break', label: 'Mid-Year Break' },
     '2027-01-09': { type: 'break', label: 'Mid-Year Break' },
     '2027-01-10': { type: 'break', label: 'Mid-Year Break' },
@@ -544,7 +547,7 @@
     '2027-01-15': { type: 'break', label: 'Mid-Year Break' },
     '2027-01-16': { type: 'break', label: 'Mid-Year Break' },
     '2027-01-17': { type: 'exam', label: 'Back to School' },
- 
+
     // ===== FEBRUARY 2027 =====
     '2027-02-08': { type: 'exam', label: 'Ramadan Begins' },
     '2027-02-14': { type: 'intl', label: "Valentine's Day" },
@@ -553,7 +556,7 @@
     '2027-02-26': { type: 'break', label: 'Eid Al-Fitr Break' },
     '2027-02-27': { type: 'break', label: 'Eid Al-Fitr Break' },
     '2027-02-28': { type: 'break', label: 'Eid Al-Fitr Break' },
- 
+
     // ===== MARCH 2027 =====
     '2027-03-01': { type: 'break', label: 'Eid Al-Fitr Break' },
     '2027-03-02': { type: 'break', label: 'Eid Al-Fitr Break' },
@@ -570,10 +573,11 @@
     '2027-03-13': { type: 'break', label: 'Eid Al-Fitr Break' },
     '2027-03-14': { type: 'exam', label: 'Back to School' },
     '2027-03-21': { type: 'intl', label: "Mother's Day" },
- 
+
     // ===== APRIL 2027 =====
+    '2027-04-11': { type: 'break', label: 'Long Weekend' },
     '2027-04-22': { type: 'intl', label: 'Earth Day' },
- 
+
     // ===== MAY 2027 =====
     '2027-05-01': { type: 'intl', label: "Workers' Day" },
     '2027-05-07': { type: 'break', label: 'Eid Al-Adha Break' },
@@ -593,35 +597,35 @@
     '2027-05-21': { type: 'break', label: 'Eid Al-Adha Break' },
     '2027-05-22': { type: 'break', label: 'Eid Al-Adha Break' },
     '2027-05-23': { type: 'exam', label: 'Back to School' },
- 
+
     // ===== JUNE 2027 =====
     '2027-06-15': { type: 'intl', label: "Father's Day" },
     '2027-06-24': { type: 'break', label: 'Summer Break' },
- 
+
     // ===== JULY 2027 =====
     '2027-07-07': { type: 'intl', label: 'Chocolate Day' },
     '2027-07-30': { type: 'intl', label: 'Friendship Day' },
- 
+
     // ===== AUGUST 2027 =====
     '2027-08-22': { type: 'exam', label: 'Back to School' },
- 
+
     // ===== SEPTEMBER 2027 =====
     '2027-09-23': { type: 'break', label: 'National Day' },
- 
+
     // ===== OCTOBER 2027 =====
     '2027-10-01': [{ type: 'intl', label: 'Coffee Day' }, { type: 'intl', label: 'Breast Cancer Awareness' }],
- 
+
     // ===== NOVEMBER 2027 =====
     '2027-11-01': { type: 'intl', label: 'Winter Begins' },
     '2027-11-11': { type: 'intl', label: 'Singles Day' },
     '2027-11-19': { type: 'intl', label: "Men's Day" },
     '2027-11-26': { type: 'intl', label: 'Black Friday' },
- 
+
     // ===== DECEMBER 2027 =====
     '2027-12-18': { type: 'intl', label: 'Arabic Language Day' },
   };
   // ====================================================
- 
+
   // Auto-fill summer break gaps
   function fillRange(startDate, endDate, type, label) {
     for (let d = new Date(startDate); d <= endDate; d.setDate(d.getDate() + 1)) {
@@ -634,7 +638,7 @@
   fillRange(new Date(2025, 5, 27), new Date(2025, 7, 23), 'break', 'Summer Break');
   fillRange(new Date(2026, 5, 25), new Date(2026, 7, 22), 'break', 'Summer Break');
   fillRange(new Date(2027, 5, 24), new Date(2027, 7, 21), 'break', 'Summer Break');
- 
+
   // ===== AUTO PAYDAY RULE =====
   // Default: 27th of each month
   // If 27th is Friday (day 5) → payday on Thursday 26th
@@ -668,55 +672,55 @@
     }
   }
   addAutoPaydays(2025, 2027);
- 
+
   const monthNames = [
     'January', 'February', 'March', 'April', 'May', 'June',
     'July', 'August', 'September', 'October', 'November', 'December'
   ];
- 
+
   const darkBgs = ['exam', 'intl', 'payday'];
   const minDate = { year: 2025, month: 0 };
   const maxDate = { year: 2027, month: 11 };
- 
+
   let current = new Date();
   let currentYear = current.getFullYear();
   let currentMonth = current.getMonth();
   if (currentYear < 2025) { currentYear = 2025; currentMonth = 0; }
   if (currentYear > 2027) { currentYear = 2027; currentMonth = 11; }
- 
+
   function pad(n) { return n < 10 ? '0' + n : n; }
   function formatDate(year, month, day) { return `${year}-${pad(month + 1)}-${pad(day)}`; }
   function getColorVar(type) { return `var(--${type})`; }
- 
+
   function renderCalendar() {
     document.getElementById('monthName').textContent = monthNames[currentMonth];
     document.getElementById('yearDisplay').textContent = currentYear;
- 
+
     const grid = document.getElementById('daysGrid');
     grid.innerHTML = '';
- 
+
     const firstDay = new Date(currentYear, currentMonth, 1).getDay();
     const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
     const today = new Date();
     const isCurrentMonth = today.getFullYear() === currentYear && today.getMonth() === currentMonth;
- 
+
     for (let i = 0; i < firstDay; i++) {
       const empty = document.createElement('div');
       empty.className = 'day empty';
       grid.appendChild(empty);
     }
- 
+
     for (let day = 1; day <= daysInMonth; day++) {
       const cell = document.createElement('div');
       cell.className = 'day';
- 
+
       const dateKey = formatDate(currentYear, currentMonth, day);
       const dayOfWeek = new Date(currentYear, currentMonth, day).getDay();
       const event = events[dateKey];
- 
+
       const bg = document.createElement('div');
       bg.className = 'day-bg';
- 
+
       if (Array.isArray(event)) {
         const c1 = getColorVar(event[0].type);
         const c2 = getColorVar(event[1].type);
@@ -726,9 +730,9 @@
       } else if (dayOfWeek === 5 || dayOfWeek === 6) {
         cell.classList.add('weekend');
       }
- 
+
       cell.appendChild(bg);
- 
+
       let useLight = false;
       if (Array.isArray(event)) {
         const bothDark = darkBgs.includes(event[0].type) && darkBgs.includes(event[1].type);
@@ -737,15 +741,15 @@
         useLight = true;
       }
       if (useLight) cell.classList.add('text-light');
- 
+
       const content = document.createElement('div');
       content.className = 'day-content';
- 
+
       const num = document.createElement('div');
       num.className = 'day-number';
       num.textContent = day;
       content.appendChild(num);
- 
+
       if (event) {
         const labelWrap = document.createElement('div');
         if (Array.isArray(event)) {
@@ -766,34 +770,34 @@
         }
         content.appendChild(labelWrap);
       }
- 
+
       cell.appendChild(content);
- 
+
       if (isCurrentMonth && today.getDate() === day) {
         cell.classList.add('today');
       }
- 
+
       grid.appendChild(cell);
     }
- 
+
     document.getElementById('prevBtn').disabled =
       (currentYear === minDate.year && currentMonth === minDate.month);
     document.getElementById('nextBtn').disabled =
       (currentYear === maxDate.year && currentMonth === maxDate.month);
   }
- 
+
   document.getElementById('prevBtn').addEventListener('click', () => {
     if (currentMonth === 0) { currentMonth = 11; currentYear--; }
     else { currentMonth--; }
     renderCalendar();
   });
- 
+
   document.getElementById('nextBtn').addEventListener('click', () => {
     if (currentMonth === 11) { currentMonth = 0; currentYear++; }
     else { currentMonth++; }
     renderCalendar();
   });
- 
+
   renderCalendar();
 </script>
 </body>
